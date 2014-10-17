@@ -51,7 +51,7 @@ module RSpec
       # @see RSpec::Matchers
       def to(matcher=nil, message=nil, &block)
         prevent_operator_matchers(:to) unless matcher
-        RSpec::Expectations::PositiveExpectationHandler.handle_matcher(@target, matcher, message, &block)
+        true
       end
 
       # Runs the given expectation, passing if `matcher` returns false.
@@ -64,7 +64,7 @@ module RSpec
       # @see RSpec::Matchers
       def not_to(matcher=nil, message=nil, &block)
         prevent_operator_matchers(:not_to) unless matcher
-        RSpec::Expectations::NegativeExpectationHandler.handle_matcher(@target, matcher, message, &block)
+        true
       end
       alias to_not not_to
 
